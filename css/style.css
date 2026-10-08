@@ -1,4 +1,28 @@
+/* 1. Переменные проекта */
 
+:root {
+    --color-bg: #ffffff;
+    --color-text: #222222;
+    --color-muted: #666666;
+    --color-primary: #0057b8;
+    --color-primary-dark: #003f86;
+    --color-border: #dddddd;
+    --color-surface: #f7f7f7;
+    --color-surface-accent: #eef5ff;
+    --color-danger: #b00020;
+    --color-success: #168a2f;
+    --color-white: #ffffff;
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
 /* Базовые настройки */
 * {
     box-sizing: border-box;
@@ -178,4 +202,72 @@ footer {
 #formMessage {
     color: green;
     font-weight: bold;
+}
+/* Состояния интерфейса */
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+button:disabled {
+    background-color: var(--color-muted);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.order-button,
+.submit-button {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+}
+
+.order-button:hover,
+.submit-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.product-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    background-color: var(--color-white);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+#orderDialog {
+    border-radius: var(--radius-lg);
+}
+
+#orderForm input:hover,
+#orderForm select:hover,
+#orderForm textarea:hover {
+    border-color: var(--color-primary);
+}
+
+#orderForm input[aria-invalid="true"] {
+    border: 2px solid var(--color-danger);
+}
+
+#formMessage {
+    color: var(--color-success);
 }
