@@ -1,20 +1,102 @@
 
+/* Базовые настройки */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.5;
+    color: #222222;
+    background-color: #ffffff;
 }
 
+/* Основные блоки */
 header,
 main,
 footer {
     padding: 20px;
 }
 
+/* Шапка сайта */
 header {
     background-color: #f2f2f2;
 }
 
+.site-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222222;
+    text-decoration: none;
+}
+
+.site-nav__list {
+    list-style: none;
+    padding: 0;
+}
+
+.site-nav__list li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.site-nav a {
+    color: #333333;
+    text-decoration: none;
+}
+
+/* Главный блок */
+.hero {
+    padding: 40px 20px;
+    background-color: #e8f0fe;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 32px;
+}
+
+.hero a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3366cc;
+    color: white;
+    text-decoration: none;
+}
+
+/* Разделы сайта */
+.section {
+    margin: 30px 0;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+/* Карточки товаров */
+.product-card {
+    display: inline-block;
+    width: 250px;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    vertical-align: top;
+}
+
+.product-card h3 {
+    margin-top: 0;
+}
+
+/* Боковой блок */
+aside {
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Подвал */
 footer {
     background-color: #f2f2f2;
+    text-align: center;
 }
