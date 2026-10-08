@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -45,18 +46,21 @@
                 <h3>Товар 1</h3>
                 <p>Описание первого товара.</p>
                 <p>Цена: 1500 руб.</p>
+                <button type="button" class="order-button" data-product="Товар 1">Заказать</button>
             </article>
 
             <article class="product-card">
                 <h3>Товар 2</h3>
                 <p>Описание второго товара.</p>
                 <p>Цена: 2500 руб.</p>
+                <button type="button" class="order-button" data-product="Товар 2">Заказать</button>
             </article>
 
             <article class="product-card">
                 <h3>Товар 3</h3>
                 <p>Описание третьего товара.</p>
                 <p>Цена: 3500 руб.</p>
+                <button type="button" class="order-button" data-product="Товар 3">Заказать</button>
             </article>
         </section>
 
@@ -65,6 +69,53 @@
             <p>Следите за нашими новинками и акциями.</p>
         </aside>
     </main>
+
+    <dialog id="orderDialog" aria-labelledby="dialogTitle">
+        <div class="modal-header">
+            <h2 id="dialogTitle">Оформление заявки</h2>
+            <button type="button" id="closeDialog" aria-label="Закрыть окно">×</button>
+        </div>
+
+        <form id="orderForm">
+            <input type="hidden" id="selectedProduct" name="product">
+
+            <label for="customerName">Ваше имя</label>
+            <input type="text" id="customerName" name="name"
+                   placeholder="Введите имя" minlength="2" required>
+
+            <label for="customerEmail">Электронная почта</label>
+            <input type="email" id="customerEmail" name="email"
+                   placeholder="example@mail.ru" required>
+
+            <label for="customerPhone">Телефон</label>
+            <input type="tel" id="customerPhone" name="phone"
+                   placeholder="+79991234567"
+                   pattern="\+?[0-9]{10,15}" required>
+
+            <label for="orderDate">Дата заявки</label>
+            <input type="date" id="orderDate" name="date" required>
+
+            <label for="orderTopic">Тема заявки</label>
+            <select id="orderTopic" name="topic" required>
+                <option value="">Выберите тему</option>
+                <option value="order">Заказ товара</option>
+                <option value="consultation">Консультация</option>
+                <option value="other">Другое</option>
+            </select>
+
+            <label for="orderComment">Комментарий</label>
+            <textarea id="orderComment" name="comment"
+                      placeholder="Ваш комментарий"></textarea>
+
+            <label class="agreement">
+                <input type="checkbox" name="agreement" required>
+                Согласен на обработку персональных данных
+            </label>
+
+            <button type="submit" class="submit-button">Отправить заявку</button>
+            <p id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+    </dialog>
 
     <footer id="contacts">
         <p>Контакты: shop@example.com</p>
