@@ -271,3 +271,23 @@ button:disabled {
 #formMessage {
     color: var(--color-success);
 }
+
+/* Практическая работа №5 */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.breadcrumbs {
+    margin-bottom: var(--space-lg);
+    color: var(--color-muted);
+}
+
+.breadcrumbs a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
